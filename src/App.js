@@ -1,7 +1,5 @@
 import './App.css';
 import Table from './components/Table'
-import TableCell from './components/TableCell'
-import TableRow from './components/TableRow'
 import React, { Component } from 'react';
 
 
@@ -10,12 +8,13 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      numRows: 1
+      numRows: 1,
+      numCols: 1
     }
   }
 
   handleAddRowButton = () => {
-    console.log('button pushed')
+    console.log('row button pushed')
     let existingRows = this.state.numRows
     this.setState({
       numRows: existingRows + 1
@@ -23,11 +22,23 @@ class App extends Component {
     console.log(existingRows)
   }
 
+  
+  handleAddColButton = () => {
+    console.log('col button pushed')
+    let existingCols = this.state.numCols
+    this.setState({
+      numCols: existingCols + 1
+    })
+    console.log(existingCols)
+  }
+
 render(){
   return (
     <div className="App">
       <button onClick={this.handleAddRowButton}>Add Row</button>
-      <Table test = 'testing props' numRows = {this.state.numRows}/>
+      <button onClick={this.handleAddColButton}>Add Column</button>
+      <Table numRows = {this.state.numRows} numCols = {this.state.numCols}/>
+     
     </div>
   );
 }

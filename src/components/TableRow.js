@@ -1,10 +1,22 @@
 import React from 'react'
 import TableCell from './TableCell'
 
-function TableRow() {
+function renderCols(numCols){
+    console.log('numCols' + numCols)
+    let allCols = []
+    for(let i = 0; i < numCols; i++){
+        console.log('renderCols called')
+        allCols.push(<TableCell />)
+    }
+    return allCols
+}
+
+
+function TableRow(props) {
+
     return (
         <tr className='row'>
-            <TableCell></TableCell>
+            {renderCols(props.cols)}
         </tr>
     )
 }
