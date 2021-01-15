@@ -10,7 +10,8 @@ class App extends Component {
     this.state={
       numRows: 1,
       numCols: 1,
-      color: ""
+      color: "",
+      clearColor: "white"
     }
   }
 
@@ -34,40 +35,55 @@ class App extends Component {
     console.log(existingCols)
   }
 
+  
+  clearCell = () => {
+    this.setState({
+      color: ""
+    })
+  }
 
-render(){
-  return (
-    <div className="App">
+  fillAll = () => {
 
-      <button onClick={this.handleAddRowButton}>Add Row</button>
-      <button onClick={this.handleAddColButton}>Add Column</button>
+  }
 
-     <br></br>
-     
-      <label>Choose a color to change a cell to: </label>
-      <select onChange={ (event) => {
-          this.setState({
-            color: event.target.value
-          })
-        }}>
-              <option>-Select-</option>
-              <option value="yellow">Yellow</option>
-              <option value="green">Green</option>
-              <option value="red">Red</option>
-              <option value="purple">Purple</option>
-        </select>
-
+  render(){
+    return (
+      <div className="App">
         <br></br>
+        <button onClick={this.handleAddRowButton}>Add Row</button>
+        <button onClick={this.handleAddColButton}>Add Column</button>
+        <button onClick={this.clearCell}>Clear Colors</button>
+        <button onClick={this.fillAll}>Fill All Cells</button>
 
-          <Table 
-          numRows = {this.state.numRows} 
-          numCols = {this.state.numCols}
-          color = {this.state.color}
-          />
-          
-    </div>
-  );
-}
+      <br></br><br></br>
+      
+        <label>Choose a color to change a cell to: </label>
+        <select onChange={ (event) => {
+            this.setState({
+              color: event.target.value
+            })
+          }}>
+                <option value="white">White</option>
+                <option value="lightblue">Blue</option>
+                <option value="gold">Yellow</option>
+                <option value="darkseagreen">Green</option>
+                <option value="tomato">Red</option>
+                <option value="orange">Orange</option>
+                <option value="mediumpurple">Purple</option>
+                <option value="pink">Pink</option>
+          </select>
+
+          <br></br><br></br><br></br>
+
+            <Table 
+            numRows = {this.state.numRows} 
+            numCols = {this.state.numCols}
+            color = {this.state.color}
+            />
+            
+      </div>
+    );
+  }
 }
 
 export default App;
