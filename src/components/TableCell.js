@@ -5,8 +5,7 @@ export default class TableCell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cellColor: "",
-            isCleared: false
+            cellColor: ""
         };
     }
 
@@ -25,6 +24,7 @@ export default class TableCell extends React.Component {
     render(){
         console.log(this.props.color)
         return (
+            
             <td className = 'cell'
             style={{backgroundColor: this.state.cellColor}} 
             onClick={this.handleColor}

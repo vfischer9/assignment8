@@ -6,7 +6,8 @@ function renderCols(numCols, newColor){
     let allCols = []
     for(let i = 0; i < numCols; i++){
         allCols.push(
-            <TableCell color = {newColor}
+            <TableCell 
+            color = {newColor}
         />)
     }
     return allCols

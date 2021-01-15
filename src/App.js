@@ -10,8 +10,7 @@ class App extends Component {
     this.state={
       numRows: 1,
       numCols: 1,
-      color: "",
-      clearColor: "white"
+      color: ""
     }
   }
 
@@ -42,9 +41,9 @@ class App extends Component {
     })
   }
 
-  fillAll = () => {
+  // fillAll = () => {
 
-  }
+  // }
 
   render(){
     return (
@@ -53,7 +52,6 @@ class App extends Component {
         <button onClick={this.handleAddRowButton}>Add Row</button>
         <button onClick={this.handleAddColButton}>Add Column</button>
         <button onClick={this.clearCell}>Clear Colors</button>
-        <button onClick={this.fillAll}>Fill All Cells</button>
 
       <br></br><br></br>
       
@@ -79,6 +77,7 @@ class App extends Component {
             numRows = {this.state.numRows} 
             numCols = {this.state.numCols}
             color = {this.state.color}
+            clearColor = {this.state.clearColor}
             />
             
       </div>
