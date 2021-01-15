@@ -32,3 +32,6 @@ button{
   margin: 5px
 }
 
+table{
+  display: inline;
+}
